@@ -1,11 +1,10 @@
-var createError = require('http-errors');
 var express = require('express');
 var app = express();
 var  https = require('https');
 
 
+//Database Configuration
 var mysql = require('mysql');
-
 var connection = mysql.createConnection({
   host     : process.env.RDS_HOSTNAME,
   user     : process.env.RDS_USERNAME,
@@ -23,6 +22,29 @@ connection.connect(function(err) {
 });
 
 connection.end();
+
+//Gets a player from the database
+app.get  ('/getPlayer', function (req, res){
+
+})
+
+//Creates a new player in the database
+app.post  ('/createPlayer', function (req, res){
+
+})
+
+//Adds a player to the database
+app.put  ('/addPlayer', function (req, res){
+
+})
+
+
+//Removes a player from the database
+app.delete  ('/deletePlayer', function (req, res){
+
+})
+
+
 
 // error handler
 app.use(function(err, req) {
